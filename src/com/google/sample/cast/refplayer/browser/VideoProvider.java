@@ -59,7 +59,7 @@ public class VideoProvider {
 
     public static final String KEY_DESCRIPTION = "description";
 
-    private static final String TARGET_FORMAT = TAG_MP4;
+    private static final String TARGET_FORMAT = TAG_HLS;
     private static List<MediaItem> mediaList;
 
     protected JSONObject parseUrl(String urlString) {
@@ -142,6 +142,69 @@ public class VideoProvider {
                 }
             }
         }
+
+        MediaItem myitem1 = new MediaItem();
+        myitem1.setUrl("http://192.168.1.6:8081/index.m3u8");
+        myitem1.setTitle("HLS Home wifi");
+        myitem1.setContentType(mediaList.get(0).getContentType());
+        //myitem.setStudio(mediaList.get(0).getStudio());
+        myitem1.setSubTitle("HLS Home wifi");
+        myitem1.mImageList = mediaList.get(0).mImageList;
+        //myitem.setDuration(11);
+        mediaList.add(myitem1);
+
+        MediaItem myitem2 = new MediaItem();
+        myitem2.setUrl("http://100.96.240.9:8081/index.m3u8");
+        myitem2.setTitle("HLS work lab 1240 wifi");
+        myitem2.setContentType(mediaList.get(0).getContentType());
+        //myitem2.setStudio(mediaList.get(0).getStudio());
+        myitem2.setSubTitle("HLS work lab 1240 wifi");
+        myitem2.mImageList = mediaList.get(0).mImageList;
+        // myitem2.setDuration(11);
+        mediaList.add(myitem2);
+
+        MediaItem myitem3 = new MediaItem();
+        myitem3.setUrl("http://192.168.43.225:8081:8081/index.m3u8");
+        myitem3.setTitle("HLS AndroidAP Pixel 2 hotspot");
+        myitem3.setContentType(mediaList.get(0).getContentType());
+        //myitem3.setStudio(mediaList.get(0).getStudio());
+        myitem3.setSubTitle("HLS AndroidAP Pixel 2 hotspot");
+        myitem3.mImageList = mediaList.get(0).mImageList;
+        //myitem.setDuration(11);
+        mediaList.add(myitem3);
+
+
+
+        MediaItem myitem4 = new MediaItem();
+        myitem4.setUrl("http://192.168.1.2:8081/index.m3u8");
+        myitem4.setTitle("HLS Mywfi device");
+        myitem4.setContentType(mediaList.get(0).getContentType());
+        //myitem4.setStudio(mediaList.get(0).getStudio());
+        myitem4.setSubTitle("HLS Mywfi device");
+        myitem4.mImageList = mediaList.get(0).mImageList;
+        //myitem.setDuration(11);
+        mediaList.add(myitem4);
+
+        MediaItem myitem5 = new MediaItem();
+        myitem5.setUrl("http://100.96.233.249:8081/index.m3u8");
+        myitem5.setTitle("HLS Lab 6445");
+        myitem5.setContentType(mediaList.get(0).getContentType());
+        //myitem5.setStudio(mediaList.get(0).getStudio());
+        myitem5.setSubTitle("HLS Lab 6445");
+        myitem5.mImageList = mediaList.get(0).mImageList;
+        //myitem.setDuration(11);
+        mediaList.add(myitem5);
+
+        myitem4 = new MediaItem();
+        myitem4.setUrl("http://192.168.1.6:8081/index.mpd");
+        myitem4.setTitle("DASH HOME WIFI device");
+        myitem4.setContentType(mediaList.get(0).getContentType());
+        //myitem4.setStudio(mediaList.get(0).getStudio());
+        myitem4.setSubTitle("DASH HOME WIFI device");
+        myitem4.mImageList = mediaList.get(0).mImageList;
+        //myitem.setDuration(11);
+        mediaList.add(myitem4);
+
         return mediaList;
     }
 

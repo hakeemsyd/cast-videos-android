@@ -31,7 +31,7 @@ public class MediaItem {
     private String mUrl;
     private String mContentType;
     private int mDuration;
-    private ArrayList<String> mImageList = new ArrayList<String>();
+    public ArrayList<String> mImageList = new ArrayList<String>();
 
     public static final String KEY_TITLE = "title";
     public static final String KEY_SUBTITLE = "subtitle";
@@ -121,7 +121,7 @@ public class MediaItem {
         wrapper.putString(KEY_URL, mUrl);
         wrapper.putString(KEY_STUDIO, mStudio);
         wrapper.putStringArrayList(KEY_IMAGES, mImageList);
-        wrapper.putString(KEY_CONTENT_TYPE, "video/mp4");
+        wrapper.putString(KEY_CONTENT_TYPE, mContentType);
         return wrapper;
     }
 

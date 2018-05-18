@@ -16,6 +16,7 @@
 
 package com.google.sample.cast.refplayer;
 
+import com.google.android.gms.cast.CastMediaControlIntent;
 import com.google.android.gms.cast.framework.CastOptions;
 import com.google.android.gms.cast.framework.OptionsProvider;
 import com.google.android.gms.cast.framework.SessionProvider;
@@ -40,7 +41,8 @@ public class CastOptionsProvider implements OptionsProvider {
                 .build();
 
         return new CastOptions.Builder()
-                .setReceiverApplicationId(context.getString(R.string.app_id))
+                //.setReceiverApplicationId(CastMediaControlIntent.DEFAULT_MEDIA_RECEIVER_APPLICATION_ID) // chromecast default player
+                .setReceiverApplicationId(context.getString(R.string.app_id)) //chromecast custom player
                 .setCastMediaOptions(mediaOptions)
                 .build();
     }

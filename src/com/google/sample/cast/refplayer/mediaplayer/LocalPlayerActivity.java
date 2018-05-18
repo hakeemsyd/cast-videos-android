@@ -761,12 +761,13 @@ public class LocalPlayerActivity extends AppCompatActivity {
 
         movieMetadata.putString(MediaMetadata.KEY_SUBTITLE, mSelectedMedia.getStudio());
         movieMetadata.putString(MediaMetadata.KEY_TITLE, mSelectedMedia.getTitle());
+
         movieMetadata.addImage(new WebImage(Uri.parse(mSelectedMedia.getImage(0))));
         movieMetadata.addImage(new WebImage(Uri.parse(mSelectedMedia.getImage(1))));
 
         return new MediaInfo.Builder(mSelectedMedia.getUrl())
-                .setStreamType(MediaInfo.STREAM_TYPE_BUFFERED)
-                .setContentType("videos/mp4")
+                .setStreamType(MediaInfo.STREAM_TYPE_LIVE)
+                .setContentType(mSelectedMedia.getContentType())
                 .setMetadata(movieMetadata)
                 .setStreamDuration(mSelectedMedia.getDuration() * 1000)
                 .build();

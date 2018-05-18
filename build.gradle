@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
 
@@ -17,14 +17,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 26
         applicationId "com.google.sample.cast.refplayer"
     }
-    enforceUniquePackageName false
+
     dexOptions {
         javaMaxHeapSize "4g"
     }

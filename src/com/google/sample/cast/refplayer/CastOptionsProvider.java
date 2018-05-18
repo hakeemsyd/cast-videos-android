@@ -29,6 +29,10 @@ import android.content.Context;
 import java.util.List;
 
 public class CastOptionsProvider implements OptionsProvider {
+    //private static final String APP_ID = "DE8535E3"; // fb published
+    private static final String APP_ID = "8699A6BC"; // rtcast
+    // private static final String APP_ID = "4760C631"; // hackreceiver
+    // private static final String APP_ID = "4F8B3483"; // stock with this proj
 
     @Override
     public CastOptions getCastOptions(Context context) {
@@ -42,7 +46,7 @@ public class CastOptionsProvider implements OptionsProvider {
 
         return new CastOptions.Builder()
                 //.setReceiverApplicationId(CastMediaControlIntent.DEFAULT_MEDIA_RECEIVER_APPLICATION_ID) // chromecast default player
-                .setReceiverApplicationId(context.getString(R.string.app_id)) //chromecast custom player
+                .setReceiverApplicationId(APP_ID) //chromecast custom player
                 .setCastMediaOptions(mediaOptions)
                 .build();
     }
